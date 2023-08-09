@@ -16,15 +16,23 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
 
 ### Installation
 
-1. Clone this repository:
+1. Create a new Flutter project:
    ```sh
-   git clone https://github.com/stickerdaniel/FlutterAppQuickstart.git
+   flutter create your_project_name
    ```
-2. Navigate into the directory:
+2. Navigate into the new project directory:
    ```sh
-   cd FlutterAppQuickstart
+   cd your_project_name
    ```
-3. Install the dependencies:
+3. Delete the existing `lib` folder:
+   ```sh
+   rm -r lib
+   ```
+4. Clone the `lib` directory from the Quickstart repository:
+   ```sh
+   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp && mv .tmp/lib . && rm -r .tmp
+   ```
+5. Install the dependencies:
    ```sh
    flutter pub get
    ```
