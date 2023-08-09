@@ -21,12 +21,12 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
    git clone https://github.com/stickerdaniel/FlutterAppQuickstart.git
    ```
 2. Navigate into the directory:
-  ```sh
-  cd FlutterAppQuickstart
-  ```
+   ```sh
+   cd FlutterAppQuickstart
+   ```
 3. Install the dependencies:
-  ```sh
-  flutter pub get
+   ```sh
+   flutter pub get
    ```
 
 ## Resources
