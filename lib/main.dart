@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lyric_lab/screens/settings/settings_screen.dart';
+
+import 'screens/settings/settings_screen.dart';
 
 void main() {
   runApp(MyApp());
