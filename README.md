@@ -32,7 +32,13 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
    ```sh
    git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp && mv .tmp/lib . && rm -r .tmp
    ```
-5. Install the dependencies:
+   or on Windows
+   ```
+   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp
+   Move-Item -Path .tmp/lib -Destination .
+   Remove-Item -Recurse -Force .tmp
+   ```
+6. Install the dependencies:
    ```sh
    flutter pub get
    ```
