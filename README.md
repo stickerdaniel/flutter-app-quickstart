@@ -19,4 +19,21 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
 1. Clone this repository:
    ```sh
    git clone https://github.com/stickerdaniel/FlutterAppQuickstart.git
-```
+   ```
+2. Navigate into the directory:
+  ```sh
+  cd FlutterAppQuickstart
+  ```
+3. Install the dependencies:
+  ```sh
+  flutter pub get
+   ```
+
+## Resources
+
+If this is your first time with Flutter, here are some resources to help you get started:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For comprehensive Flutter development documentation, view the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
