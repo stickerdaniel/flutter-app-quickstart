@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
               brightness: Brightness.dark, seedColor: Colors.blue),
           useMaterial3: true), // standard dark theme
       home: MyHomePage(
-        title: 'LyricLab',
+        title: 'My App',
         onThemeChanged: setThemeMode,
       ),
     );
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => {},
-        label: const Text('New Lyrics'),
+        label: const Text('Action'),
         icon: const Icon(Icons.add),
       ),
     );
