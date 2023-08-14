@@ -5,3 +5,5 @@
 !/pubspec.yaml
 !/README.md
 !/lib/
+# all the files in the lib folder
+/lib/**
