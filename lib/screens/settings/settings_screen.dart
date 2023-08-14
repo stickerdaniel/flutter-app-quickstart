@@ -149,7 +149,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.info_outline),
-                    title: const Text('LyricsLab for Android'),
+                    title: const Text('MyApp for Android'),
                     subtitle: Text(
                         'Version $_appVersion'), // using the state variable here
                     enableFeedback: false,
