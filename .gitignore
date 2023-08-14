@@ -7,3 +7,6 @@
 !/lib/
 # all the files in the lib folder
 /lib/**
+# gitignore file
+!.gitignore
+```
