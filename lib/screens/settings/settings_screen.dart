@@ -1,51 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/settings_section.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingsScreen extends StatefulWidget {
   final void Function(ThemeMode) onThemeChanged;
-  final void Function(bool) onDynamicColorToggle;
 
-  const SettingsScreen({
-    Key? key,
-    required this.onThemeChanged,
-    required this.onDynamicColorToggle,
-  }) : super(key: key);
+  const SettingsScreen({Key? key, required this.onThemeChanged})
+      : super(key: key);
 
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  late ThemeMode _themeMode = ThemeMode.system;
-  late bool _useDynamicColors = false;
+  ThemeMode _themeMode = ThemeMode.system;
   String _appVersion = "Loading..."; // default value
 
   @override
   void initState() {
     super.initState();
     _fetchAppVersion();
-    _loadPreferences();
-  }
-
-  _loadPreferences() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      var themeModeString = prefs.getString('themeMode') ?? 'system';
-      switch (themeModeString) {
-        case 'light':
-          _themeMode = ThemeMode.light;
-          break;
-        case 'dark':
-          _themeMode = ThemeMode.dark;
-          break;
-        default:
-          _themeMode = ThemeMode.system;
-      }
-      _useDynamicColors = prefs.getBool('useDynamicColors') ?? false;
-    });
   }
 
   Future<void> _fetchAppVersion() async {
@@ -96,13 +71,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  void toggleDynamicColors(bool value) {
-    setState(() {
-      _useDynamicColors = value;
-    });
-    widget.onDynamicColorToggle(value);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,20 +101,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       onTap: _showThemeDialog,
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.color_lens),
-                      title: const Text('Use System Colors'),
-                      trailing: Switch(
-                        value: _useDynamicColors,
-                        onChanged: (bool value) {
-                          toggleDynamicColors(value);
-                        },
-                      ),
-                      onTap: () {
-                        toggleDynamicColors(
-                            !_useDynamicColors); // toggle the value when the ListTile is tapped
-                      },
-                    ),
                   ],
                 ),
                 SettingsSection(name: 'About', children: [
@@ -157,7 +111,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.info_outline),
-                    title: const Text('MyApp for Android'),
+                    title: const Text('Myapp for Android'),
                     subtitle: Text(
                         'Version $_appVersion'), // using the state variable here
                     enableFeedback: false,
