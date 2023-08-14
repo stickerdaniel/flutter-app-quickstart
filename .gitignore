@@ -1,0 +1,7 @@
+# Ignore everything by default
+*
+
+# Whitelist the files and folders you want to keep
+!/pubspec.yaml
+!/README.md
+!/lib/
