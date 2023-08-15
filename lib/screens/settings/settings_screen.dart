@@ -36,7 +36,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _themeMode = (prefs.getString('themeMode') ?? 'system') == 'light'
           ? ThemeMode.light
           : ThemeMode.dark;
-      _useDynamicColors = prefs.getBool('useDynamicColors') ?? false;
+      if (prefs.getBool('useDynamicColors') ?? false) {
+        toggleDynamicColors(true);
+      }
     });
   }
 
