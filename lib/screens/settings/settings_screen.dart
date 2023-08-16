@@ -64,6 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          contentPadding: const EdgeInsets.symmetric(vertical: 24),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: ThemeMode.values.map((mode) {
@@ -80,8 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   });
                   Navigator.of(context).pop(); // Close the dialog.
                 },
-
-                contentPadding: EdgeInsets.zero, // Removes default padding
+                contentPadding: const EdgeInsets.symmetric(horizontal: 26),
               );
             }).toList(),
           ),
