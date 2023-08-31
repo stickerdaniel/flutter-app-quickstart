@@ -7,11 +7,13 @@ import 'package:package_info_plus/package_info_plus.dart';
 class SettingsScreen extends StatefulWidget {
   final void Function(ThemeMode) onThemeChanged;
   final void Function(bool) onDynamicColorToggle;
+  final bool isDynamicColorAvailable;
 
   const SettingsScreen({
     Key? key,
     required this.onThemeChanged,
     required this.onDynamicColorToggle,
+    required this.isDynamicColorAvailable,
   }) : super(key: key);
 
   @override
@@ -127,20 +129,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       onTap: _showThemeDialog,
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.color_lens),
-                      title: const Text('Use System Colors'),
-                      trailing: Switch(
-                        value: _useDynamicColors,
-                        onChanged: (bool value) {
-                          toggleDynamicColors(value);
+                    if (widget.isDynamicColorAvailable)
+                      ListTile(
+                        leading: const Icon(Icons.color_lens),
+                        title: const Text('Use System Colors'),
+                        trailing: Switch(
+                          value: _useDynamicColors,
+                          onChanged: (bool value) {
+                            toggleDynamicColors(value);
+                          },
+                        ),
+                        onTap: () {
+                          toggleDynamicColors(
+                              !_useDynamicColors); // toggle the value when the ListTile is tapped
                         },
                       ),
-                      onTap: () {
-                        toggleDynamicColors(
-                            !_useDynamicColors); // toggle the value when the ListTile is tapped
-                      },
-                    ),
                   ],
                 ),
                 SettingsSection(name: 'About', children: [

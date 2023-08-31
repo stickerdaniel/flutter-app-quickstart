@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   bool _useDynamicColors = false;
 
   // Fictitious brand color.
-  final Color _brandColor = const Color.fromARGB(255, 24, 89, 185);
+  final Color _brandColor = const Color(0xFF1859B9);
 
   @override
   void initState() {
@@ -56,10 +56,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+        bool isDynamicColorAvailable =
+            lightDynamic != null && darkDynamic != null;
+
         ColorScheme lightColorScheme;
         ColorScheme darkColorScheme;
 
-        if (_useDynamicColors && lightDynamic != null && darkDynamic != null) {
+        if (_useDynamicColors && isDynamicColorAvailable) {
           lightColorScheme =
               lightDynamic.harmonized().copyWith(secondary: _brandColor);
           darkColorScheme =
@@ -81,6 +84,7 @@ class _MyAppState extends State<MyApp> {
             title: 'My App',
             onThemeChanged: setThemeMode,
             onDynamicColorToggle: toggleDynamicColors,
+            isDynamicColorAvailable: isDynamicColorAvailable,
           ),
         );
       },
@@ -92,12 +96,14 @@ class MyHomePage extends StatefulWidget {
   final void Function(ThemeMode) onThemeChanged;
   final void Function(bool) onDynamicColorToggle;
   final String title;
+  final bool isDynamicColorAvailable;
 
   const MyHomePage(
       {Key? key,
       required this.onThemeChanged,
       required this.title,
-      required this.onDynamicColorToggle})
+      required this.onDynamicColorToggle,
+      required this.isDynamicColorAvailable})
       : super(key: key);
 
   @override
@@ -121,6 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => SettingsScreen(
                           onThemeChanged: widget.onThemeChanged,
                           onDynamicColorToggle: widget.onDynamicColorToggle,
+                          isDynamicColorAvailable:
+                              widget.isDynamicColorAvailable,
                         )),
               );
             },
