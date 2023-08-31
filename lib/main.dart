@@ -17,6 +17,9 @@ class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.system;
   bool _useDynamicColors = false;
 
+  // Fictitious brand color.
+  final Color _brandColor = const Color.fromARGB(255, 24, 89, 185);
+
   @override
   void initState() {
     super.initState();
@@ -53,20 +56,27 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+        ColorScheme lightColorScheme;
+        ColorScheme darkColorScheme;
+
+        if (_useDynamicColors && lightDynamic != null && darkDynamic != null) {
+          lightColorScheme =
+              lightDynamic.harmonized().copyWith(secondary: _brandColor);
+          darkColorScheme =
+              darkDynamic.harmonized().copyWith(secondary: _brandColor);
+        } else {
+          lightColorScheme = ColorScheme.fromSeed(seedColor: _brandColor);
+          darkColorScheme = ColorScheme.fromSeed(
+              brightness: Brightness.dark, seedColor: _brandColor);
+        }
+
         return MaterialApp(
           title: 'Flutter Demo',
           themeMode: _themeMode,
-          theme: _useDynamicColors && lightDynamic != null
-              ? ThemeData.from(colorScheme: lightDynamic, useMaterial3: true)
-              : ThemeData.from(
-                  colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-                  useMaterial3: true),
-          darkTheme: _useDynamicColors && darkDynamic != null
-              ? ThemeData.from(colorScheme: darkDynamic, useMaterial3: true)
-              : ThemeData.from(
-                  colorScheme: ColorScheme.fromSeed(
-                      brightness: Brightness.dark, seedColor: Colors.blue),
-                  useMaterial3: true),
+          theme:
+              ThemeData.from(colorScheme: lightColorScheme, useMaterial3: true),
+          darkTheme:
+              ThemeData.from(colorScheme: darkColorScheme, useMaterial3: true),
           home: MyHomePage(
             title: 'My App',
             onThemeChanged: setThemeMode,
