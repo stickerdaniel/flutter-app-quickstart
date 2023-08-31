@@ -2,6 +2,11 @@
 
 Jumpstart your next Flutter project with this template, which includes a settings screen to display the app version and offers an option to switch between light, dark, or system default themes.
 
+<p align="center">
+  <img src="https://github.com/stickerdaniel/FlutterAppQuickstart/assets/63877413/b26fb3f5-be34-4dbf-92a1-f8711ab53861" width="200">
+</p>
+
+
 ## Features
 
 - **Settings Screen:** A dedicated screen to display app-related settings.
