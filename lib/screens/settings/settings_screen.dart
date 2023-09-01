@@ -130,18 +130,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onTap: _showThemeDialog,
                     ),
                     if (widget.isDynamicColorAvailable)
-                      ListTile(
-                        leading: const Icon(Icons.color_lens),
+                      SwitchListTile.adaptive(
+                        secondary: const Icon(Icons.color_lens),
                         title: const Text('Use System Colors'),
-                        trailing: Switch(
-                          value: _useDynamicColors,
-                          onChanged: (bool value) {
-                            toggleDynamicColors(value);
-                          },
-                        ),
-                        onTap: () {
-                          toggleDynamicColors(
-                              !_useDynamicColors); // toggle the value when the ListTile is tapped
+                        value: _useDynamicColors,
+                        onChanged: (bool value) {
+                          toggleDynamicColors(value);
                         },
                       ),
                   ],
