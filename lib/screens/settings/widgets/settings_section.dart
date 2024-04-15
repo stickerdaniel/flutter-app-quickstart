@@ -1,3 +1,4 @@
+// lib/screens/settings/widgets/settings_section.dart
 import 'package:flutter/material.dart';
 
 class SettingsSection extends StatelessWidget {
