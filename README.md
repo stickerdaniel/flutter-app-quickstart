@@ -21,6 +21,8 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
 
 ### Installation
 
+#### macOS/Linux
+
 1. Create a new Flutter project:
    ```sh
    flutter create your_project_name
@@ -29,19 +31,46 @@ Ensure you have Flutter installed on your machine. If not, head over to the offi
    ```sh
    cd your_project_name
    ```
-3. Delete the existing `lib` folder:
+3. Download the template repository:
    ```sh
-   rm -r lib
+   git clone https://github.com/stickerdaniel/flutter-app-quickstart.git template_repo
    ```
-4. Clone the `lib` directory from the Quickstart repository:
+4. Copy the files from the template repository:
    ```sh
-   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp && mv .tmp/lib . && rm -r .tmp
+   cp -r template_repo/* .
+   cp -r template_repo/.[^.]* .
    ```
-   or on Windows
+5. Clean up the temporary repository folder:
+   ```sh
+   rm -rf template_repo
    ```
-   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp
-   Move-Item -Path .tmp/lib -Destination .
-   Remove-Item -Recurse -Force .tmp
+6. Install the dependencies:
+   ```sh
+   flutter pub get
+   ```
+
+#### Windows
+
+1. Create a new Flutter project:
+   ```sh
+   flutter create your_project_name
+   ```
+2. Navigate into the new project directory:
+   ```sh
+   cd your_project_name
+   ```
+3. Download the template repository:
+   ```sh
+   git clone https://github.com/stickerdaniel/flutter-app-quickstart.git template_repo
+   ```
+4. Copy the files from the template repository:
+   ```sh
+   xcopy template_repo\* . /s /e /y
+   xcopy template_repo\.* . /s /e /y
+   ```
+5. Clean up the temporary repository folder:
+   ```sh
+   rmdir /s /q template_repo
    ```
 6. Install the dependencies:
    ```sh
