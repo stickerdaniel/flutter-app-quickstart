@@ -1,0 +1,11 @@
+# Ignore everything by default
+*
+
+# Whitelist the files and folders you want to keep
+!/pubspec.yaml
+!/README.md
+!/lib/
+# all the files in the lib folder and its subfolders
+!/lib/**/*
+# gitignore file
+!.gitignore

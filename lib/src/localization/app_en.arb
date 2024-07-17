@@ -1,0 +1,56 @@
+{
+  "@@locale": "en",
+  "common_appName": "Flutter Demo",
+  "@common_appName": {
+    "description": "The name of the application"
+  },
+  "home_appTitle": "MyApp",
+  "@home_appTitle": {
+    "description": "Title for the home screen"
+  },
+  "settings_title": "Settings",
+  "@settings_title": {
+    "description": "Title for the settings screen"
+  },
+  "settings_colorScheme": "Color Scheme",
+  "@settings_colorScheme": {
+    "description": "Label for color scheme option"
+  },
+  "settings_useDynamicColors": "Use Dynamic Colors",
+  "@settings_useDynamicColors": {
+    "description": "Label for dynamic colors switch"
+  },
+  "settings_helpCenter": "Help Center",
+  "@settings_helpCenter": {
+    "description": "Label for help center option"
+  },
+  "settings_appForAndroid": "MyApp for Android",
+  "@settings_appForAndroid": {
+    "description": "Label for app version"
+  },
+  "settings_signOut": "Sign out",
+  "@settings_signOut": {
+    "description": "Label for sign out option"
+  },
+  "settings_version": "Version {version}",
+  "@settings_version": {
+    "description": "Label for displaying app version",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_systemDefault": "System (Default)",
+  "@settings_systemDefault": {
+    "description": "Label for system default theme mode"
+  },
+  "settings_appearance": "Appearance",
+  "@settings_appearance": {
+    "description": "Title for the appearance settings section"
+  },
+  "settings_about": "About",
+  "@settings_about": {
+    "description": "Title for the about settings section"
+  }
+}

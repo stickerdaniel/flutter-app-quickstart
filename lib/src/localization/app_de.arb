@@ -1,0 +1,56 @@
+{
+  "@@locale": "de",
+  "common_appName": "Flutter Demo",
+  "@common_appName": {
+    "description": "Der Name der Anwendung"
+  },
+  "home_appTitle": "MeineApp",
+  "@home_appTitle": {
+    "description": "Titel für den Startbildschirm"
+  },
+  "settings_title": "Einstellungen",
+  "@settings_title": {
+    "description": "Titel für den Einstellungsbildschirm"
+  },
+  "settings_colorScheme": "Farbschema",
+  "@settings_colorScheme": {
+    "description": "Beschriftung für Farbschema-Option"
+  },
+  "settings_useDynamicColors": "Dynamische Farben verwenden",
+  "@settings_useDynamicColors": {
+    "description": "Beschriftung für dynamische Farbenschalter"
+  },
+  "settings_helpCenter": "Hilfezentrum",
+  "@settings_helpCenter": {
+    "description": "Beschriftung für Hilfezentrum-Option"
+  },
+  "settings_appForAndroid": "MeineApp für Android",
+  "@settings_appForAndroid": {
+    "description": "Beschriftung für App-Version"
+  },
+  "settings_signOut": "Abmelden",
+  "@settings_signOut": {
+    "description": "Beschriftung für Abmelden-Option"
+  },
+  "settings_version": "Version {version}",
+  "@settings_version": {
+    "description": "Beschriftung für die Anzeige der App-Version",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_systemDefault": "System (Standard)",
+  "@settings_systemDefault": {
+    "description": "Beschriftung für die Systemstandard-Themenmodus-Option"
+  },
+  "settings_appearance": "Aussehen",
+  "@settings_appearance": {
+    "description": "Titel für den Abschnitt 'Aussehen' in den Einstellungen"
+  },
+  "settings_about": "Über",
+  "@settings_about": {
+    "description": "Titel für den Abschnitt 'Über' in den Einstellungen"
+  }
+}
