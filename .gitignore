@@ -5,8 +5,9 @@
 !/pubspec.yaml
 !/README.md
 !/lib/
-# all the files in the lib folder and its subfolders
-!/lib/**/*
+# all the files in the lib folder and all its subfolders
+!/lib/**
 # gitignore file
 !.gitignore
+# localization files
 !l10n.yaml

@@ -1,30 +1,58 @@
-# flash_guru
+# Flutter App Quickstart
 
-A new Flutter project.
+Jumpstart your next Flutter project with this template, which includes a settings screen to display the app version and offers an option to switch between light, dark, or system default themes.
+
+<p align="center">
+  <img src="https://github.com/stickerdaniel/FlutterAppQuickstart/assets/63877413/b26fb3f5-be34-4dbf-92a1-f8711ab53861" width="200">
+</p>
+
+
+## Features
+
+- **Settings Screen:** A dedicated screen to display app-related settings.
+  - **App Version:** Shows the current version of the app.
+  - **Theme Toggle:** Lets users switch between light, dark, or system default themes.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+### Prerequisites
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ensure you have Flutter installed on your machine. If not, head over to the official [Flutter installation guide](https://docs.flutter.dev/get-started/install) to set up your local development machine.
 
-## Assets
+### Installation
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+1. Create a new Flutter project:
+   ```sh
+   flutter create your_project_name
+   ```
+2. Navigate into the new project directory:
+   ```sh
+   cd your_project_name
+   ```
+3. Delete the existing `lib` folder:
+   ```sh
+   rm -r lib
+   ```
+4. Clone the `lib` directory from the Quickstart repository:
+   ```sh
+   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp && mv .tmp/lib . && rm -r .tmp
+   ```
+   or on Windows
+   ```
+   git clone --depth 1 https://github.com/stickerdaniel/FlutterAppQuickstart.git .tmp
+   Move-Item -Path .tmp/lib -Destination .
+   Remove-Item -Recurse -Force .tmp
+   ```
+6. Install the dependencies:
+   ```sh
+   flutter pub get
+   ```
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+## Resources
 
-## Localization
+If this is your first time with Flutter, here are some resources to help you get started:
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+For comprehensive Flutter development documentation, view the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
