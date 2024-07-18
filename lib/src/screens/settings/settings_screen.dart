@@ -136,15 +136,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               .capitalize()),
                       onTap: _showThemeDialog,
                     ),
-                    ListTile(
-                      leading: const Icon(Icons.color_lens),
-                      title: Text(AppLocalizations.of(context)!
-                          .settings_useDynamicColors),
-                      trailing: Switch(
-                        value: widget.themeService.useDynamicColors,
-                        onChanged: widget.themeService.toggleDynamicColors,
+                    // dynamic colors only available on android
+                    if (!kIsWeb && Platform.isAndroid)
+                      ListTile(
+                        leading: const Icon(Icons.color_lens),
+                        title: Text(AppLocalizations.of(context)!
+                            .settings_useDynamicColors),
+                        trailing: Switch(
+                          value: widget.themeService.useDynamicColors,
+                          onChanged: widget.themeService.toggleDynamicColors,
+                        ),
                       ),
-                    ),
                   ],
                 ),
                 SettingsSection(
