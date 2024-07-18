@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter/foundation.dart';
+import 'dart:io' show Platform;
 
 import '../../services/theme_service.dart';
 import 'widgets/settings_section.dart';
@@ -82,6 +84,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  String getPlatformName() {
+    if (kIsWeb) {
+      return "Web";
+    } else {
+      if (Platform.isAndroid) {
+        return "Android";
+      } else if (Platform.isIOS) {
+        return "iOS";
+      } else if (Platform.isFuchsia) {
+        return "Fuchsia";
+      } else if (Platform.isLinux) {
+        return "Linux";
+      } else if (Platform.isMacOS) {
+        return "MacOS";
+      } else if (Platform.isWindows) {
+        return "Windows";
+      } else {
+        return "Unknown";
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,7 +159,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ListTile(
                         leading: const Icon(Icons.info_outline),
                         title: Text(AppLocalizations.of(context)!
-                            .settings_appForAndroid),
+                            .settings_appForPlattform(getPlatformName())),
                         subtitle: Text(AppLocalizations.of(context)!
                             .settings_version(_appVersion)),
                       ),

@@ -24,9 +24,14 @@
   "@settings_helpCenter": {
     "description": "Label for help center option"
   },
-  "settings_appForAndroid": "MyApp for Android",
-  "@settings_appForAndroid": {
-    "description": "Label for app version"
+  "settings_appForPlattform": "MyApp for {plattform}",
+  "@settings_appForPlattform": {
+    "description": "Label for app version",
+    "placeholders": {
+      "plattform": {
+        "type": "String"
+      }
+    }
   },
   "settings_signOut": "Sign out",
   "@settings_signOut": {

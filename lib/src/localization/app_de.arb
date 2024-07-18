@@ -20,13 +20,18 @@
   "@settings_useDynamicColors": {
     "description": "Beschriftung für dynamische Farbenschalter"
   },
-  "settings_helpCenter": "Hilfezentrum",
+  "settings_helpCenter": "Hilfe",
   "@settings_helpCenter": {
     "description": "Beschriftung für Hilfezentrum-Option"
   },
-  "settings_appForAndroid": "MeineApp für Android",
-  "@settings_appForAndroid": {
-    "description": "Beschriftung für App-Version"
+  "settings_appForPlattform": "MeineApp für {plattform}",
+  "@settings_appForPlattform": {
+    "description": "Beschriftung für App-Plattform",
+    "placeholders": {
+      "plattform": {
+        "type": "String"
+      }
+    }
   },
   "settings_signOut": "Abmelden",
   "@settings_signOut": {
