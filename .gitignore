@@ -11,3 +11,6 @@
 !.gitignore
 # localization files
 !l10n.yaml
+# CI workflows
+!/.github/
+!/.github/**
